@@ -1,0 +1,51 @@
+# Upstream versions selected on 2026-08-10.
+
+[lerobot]
+version = "0.6.1"
+git_tag = "v0.6.1"
+git_commit = "7e241bd630a3719a56157a497ce5d08f244784f1"
+pypi_wheel_sha256 = "1894516040c65f80a45bd9741f8174aae90ed5d93da0627ab4f1a85fd8d75e90"
+
+[libero]
+distribution = "hf-libero"
+version = "0.1.4"
+pypi_wheel_sha256 = "207f76e2f28bff30f78132223d8592fe8f64b1f8fd90ce7024948ada0d7e2c27"
+
+[models.smolvla_base]
+repo_id = "lerobot/smolvla_base"
+revision = "c83c3163b8ca9b7e67c509fffd9121e66cb96205"
+
+[models.smolvla_libero]
+repo_id = "lerobot/smolvla_libero"
+revision = "31d453f7edd78c839a8bbc39744a292686daf0de"
+
+[dataset.libero]
+repo_id = "lerobot/libero"
+revision = "a1aaacb7f6cd6ee5fb43120f673cebb0cfea7dd4"
+format = "LeRobot v3.0"
+episodes = 1693
+frames = 273465
+tasks = 40
+fps = 10
+
+[dataset.libero_assets]
+repo_id = "lerobot/libero-assets"
+revision = "0b3ea86be5fe169d0fd036ae63d1070ec09e90f6"
+
+[interfaces.libero]
+suites = ["libero_spatial", "libero_object", "libero_goal", "libero_90", "libero_10"]
+control_mode = "relative"
+control_frequency_hz = 20
+action_key = "action"
+action_shape = [7]
+action_range = [-1.0, 1.0]
+raw_main_camera_key = "pixels.image"
+raw_wrist_camera_key = "pixels.image2"
+policy_main_camera_key = "observation.images.image"
+policy_wrist_camera_key = "observation.images.image2"
+policy_state_key = "observation.state"
+policy_state_shape = [8]
+
+[network]
+primary_huggingface_endpoint = "https://huggingface.co"
+fallback_huggingface_endpoint = "https://hf-mirror.com"

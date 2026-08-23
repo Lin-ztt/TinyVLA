@@ -1,0 +1,38 @@
+dataset:
+  repo_id: lerobot/libero
+  root: data/libero
+  revision: a1aaacb7f6cd6ee5fb43120f673cebb0cfea7dd4
+  episodes: null
+  video_backend: pyav
+
+policy:
+  path: models/upstream/smolvla_base
+  device: cuda
+  use_amp: false
+  push_to_hub: false
+  load_vlm_weights: false
+  freeze_vision_encoder: true
+  train_expert_only: true
+  train_state_proj: true
+
+rename_map:
+  observation.images.image: observation.images.camera1
+  observation.images.image2: observation.images.camera2
+
+output_dir: outputs/runs/sft/libero_40tasks/train
+job_name: smolvla_libero_40tasks_all
+seed: 1000
+batch_size: 32
+num_workers: 2
+prefetch_factor: 2
+persistent_workers: true
+steps: 25000
+log_freq: 50
+env_eval_freq: 0
+eval_steps: 0
+save_checkpoint: true
+save_freq: 2500
+save_checkpoint_to_hub: false
+
+wandb:
+  enable: false

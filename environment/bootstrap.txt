@@ -1,0 +1,5 @@
+# Required before EGL probe packages build their native extensions.
+# CMake 4 removed compatibility needed by egl-probe 1.0.2.
+cmake==3.31.10
+egl-probe==1.0.2
+hf-egl-probe==1.0.2

@@ -1,0 +1,35 @@
+seed: 1000
+checkpoint: models/sft/libero_40tasks
+output_dir: outputs/runs/dsrl/libero_spatial/task_04/baseline/seed_1000/train
+device: cuda
+
+environment:
+  suite: libero_spatial
+  task_id: 4
+  max_episode_steps: 280
+  execute_horizon: 20
+  discount: 0.999
+  bootstrap_on_truncation: true
+
+sac:
+  batch_size: 32
+  actor_lr: 0.0001
+  critic_lr: 0.0003
+  temperature_lr: 0.0003
+  tau: 0.005
+  initial_temperature: 1.0
+  target_entropy: -16.0
+  num_qs: 10
+  random_crop_padding: 4
+
+replay_buffer:
+  capacity: 10000
+
+training:
+  learning_starts: 32
+  utd_ratio: 1
+  min_episodes: 2
+  min_gradient_steps: 500
+  checkpoint_every_gradient_steps: 100
+  save_every_episodes: 1
+  eval_at_end: true

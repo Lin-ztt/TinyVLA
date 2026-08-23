@@ -1,0 +1,22 @@
+seed: 1000
+checkpoint: models/sft/libero_40tasks
+actor_checkpoint: outputs/runs/dsrl/libero_spatial/task_04/baseline/seed_1000/train/checkpoint_latest.pt
+output_dir: outputs/runs/dsrl/libero_spatial/task_04/baseline/seed_1000/evaluation
+device: cuda
+
+environment:
+  suite: libero_spatial
+  task_ids: [4]
+  max_episode_steps: 280
+  execute_horizon: 20
+  init_state_start: 0
+  discount: 0.999
+
+evaluation:
+  episodes: 20
+  modes:
+    - native
+    - structured_random
+    - learned
+  bootstrap_samples: 10000
+  confidence_level: 0.95

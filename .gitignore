@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vscode/
+
+# Local environments and secrets
+.env
+.env.*
+*.token
+
+# Models, datasets, caches, and experiment artifacts
+assets/*
+outputs/
+data/*
+datasets/
+models/
+checkpoints/
+wandb/
+.cache/
+reports/
+docs/
+AGENTS.md
+configs/experiments/
+scripts/experiments/
+*.egg-info/
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.mp4

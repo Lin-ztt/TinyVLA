@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tinyvla"
+version = "0.1.0"
+description = "SmolVLA post-training and LIBERO reinforcement-learning experiments"
+requires-python = ">=3.10"
+dependencies = [
+  "lerobot[smolvla]==0.6.1",
+  "hf-libero==0.1.4",
+  "numpy",
+  "torch",
+  "pyyaml",
+  "imageio",
+  "imageio-ffmpeg",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

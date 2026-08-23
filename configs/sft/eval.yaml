@@ -1,0 +1,34 @@
+env:
+  type: libero
+  task: libero_goal
+  task_ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  fps: 20
+  episode_length: 300
+  obs_type: pixels_agent_pos
+  render_mode: rgb_array
+  camera_name: agentview_image,robot0_eye_in_hand_image
+  init_states: true
+  hard_reset: true
+  observation_height: 256
+  observation_width: 256
+  control_mode: relative
+
+eval:
+  n_episodes: 10
+  batch_size: 1
+  use_async_envs: false
+  recording: false
+
+policy:
+  path: models/sft/libero_40tasks
+  device: cuda
+  use_amp: false
+  load_vlm_weights: false
+
+output_dir: outputs/runs/sft/libero_40tasks/evaluation
+job_name: smolvla_libero_40tasks_ep10
+seed: 1000
+
+rename_map:
+  observation.images.image: observation.images.camera1
+  observation.images.image2: observation.images.camera2

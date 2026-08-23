@@ -1,0 +1,27 @@
+name: libero_goal_debug
+source:
+  repo_id: lerobot/libero
+  root: data/libero
+  revision: a1aaacb7f6cd6ee5fb43120f673cebb0cfea7dd4
+dataset:
+  repo_id: lerobot/libero
+  root: data/views/libero_goal_debug
+  revision: a1aaacb7f6cd6ee5fb43120f673cebb0cfea7dd4
+  episodes:
+  - 437
+  - 463
+selection:
+  seed: 1000
+  tasks: 1
+  episodes: 2
+tasks:
+- language: open the middle drawer of the cabinet
+  env_task_id: 0
+  task_index: 19
+  available_episodes: 43
+  episodes:
+  - 437
+  - 463
+  frames: 284
+summary:
+  frames: 284

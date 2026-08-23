@@ -1,0 +1,31 @@
+learner_seed: 3000
+checkpoint: models/sft/libero_40tasks
+output_dir: outputs/runs/expo/libero_spatial/task_04/baseline/seed_3000/evaluation
+device: cuda
+
+environment:
+  suite: libero_spatial
+  task_id: 4
+  max_episode_steps: 280
+  discount: 0.99
+  bootstrap_on_truncation: true
+
+expo:
+  batch_size: 64
+  actor_lr: 0.0003
+  critic_lr: 0.0003
+  temperature_lr: 0.0003
+  tau: 0.005
+  edit_scale: 0.1
+  initial_temperature: 1.0
+  target_entropy: -28.0
+  num_qs: 10
+  num_min_qs: 2
+  crop_padding: 4
+  rotation_degrees: 5.0
+  color_jitter: 0.1
+
+evaluation:
+  episodes: 20
+  init_state_start: 30
+  seed: 4000
