@@ -1,11 +1,15 @@
-# TinyVLA
+<h1 align="center">TinyVLA</h1>
 
-**SmolVLA on LIBERO with supervised and reinforcement-learning post-training**
+<p align="center">
+  <strong>SmolVLA on LIBERO with supervised and reinforcement-learning post-training</strong>
+</p>
 
-[![License](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.x-ee4c2c.svg)](https://pytorch.org/)
-[![LeRobot](https://img.shields.io/badge/LeRobot-0.6.1-1f6feb.svg)](https://github.com/huggingface/lerobot)
-[![Benchmark](https://img.shields.io/badge/Benchmark-LIBERO-2ea44f.svg)](https://github.com/Lifelong-Robot-Learning/LIBERO)
+<p align="center">
+<a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-blue.svg" alt="License: Apache-2.0"></a>
+<a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.x-ee4c2c.svg" alt="PyTorch 2.x"></a>
+<a href="https://github.com/huggingface/lerobot"><img src="https://img.shields.io/badge/LeRobot-0.6.1-1f6feb.svg" alt="LeRobot 0.6.1"></a>
+<a href="https://github.com/Lifelong-Robot-Learning/LIBERO"><img src="https://img.shields.io/badge/Benchmark-LIBERO-2ea44f.svg" alt="LIBERO benchmark"></a>
+</p>
 
 TinyVLA is a lightweight engineering project for experiments with embodied vision-language-action (VLA) models. It uses LeRobot, SmolVLA, and LIBERO to provide a single workflow for base-policy inference, supervised fine-tuning (SFT), reinforcement-learning post-training, closed-loop evaluation, and rollout video recording.
 
